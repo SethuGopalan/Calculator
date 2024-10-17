@@ -1,5 +1,33 @@
 <<<<<<< HEAD
 
+# Dash Calculator App
+
+This is a simple calculator app built using Dash, a Python framework for building analytical web applications. The app provides basic arithmetic operations and is designed to run inside a Docker container.
+
+## Screenshots
+[Include some screenshots of your app's UI and functionality]
+![App Screenshot](assets/Calculator.jpg)
+
+## Features
+- Basic arithmetic operations: addition, subtraction, multiplication, and division.
+- A clean, simple UI built with Dash and HTML components.
+- Runs inside a Docker container for easy deployment.
+
+## Prerequisites
+To run this application, you need to have the following installed:
+- [Docker](https://www.docker.com/get-started)
+- [Docker Compose](https://docs.docker.com/compose/install/)
+
+- ## Project Structure
+```bash
+calculator_pro/
+│
+├── calculator.py       # Main Dash application file
+├── Dockerfile          # Dockerfile for building the app container
+├── docker-compose.yml  # Docker Compose configuration
+├── requirements.txt    # Python dependencies (e.g., Dash)
+└── README.md           # Project documentation (this file)
+
 # Getting Started
 
 ### Clone the repository
@@ -66,33 +94,9 @@ This file lists the dependencies required for the project (e.g., Dash). When Doc
 ## Acknowledgments
 - [Dash by Plotly](https://dash.plotly.com/) - A Python framework for building web applications.
 =======
-# Dash Calculator App
 
-This is a simple calculator app built using Dash, a Python framework for building analytical web applications. The app provides basic arithmetic operations and is designed to run inside a Docker container.
 
-## Screenshots
-[Include some screenshots of your app's UI and functionality]
-![App Screenshot](assets/Calculator.jpg)
 
-## Features
-- Basic arithmetic operations: addition, subtraction, multiplication, and division.
-- A clean, simple UI built with Dash and HTML components.
-- Runs inside a Docker container for easy deployment.
-
-## Prerequisites
-To run this application, you need to have the following installed:
-- [Docker](https://www.docker.com/get-started)
-- [Docker Compose](https://docs.docker.com/compose/install/)
-
-## Project Structure
-```bash
-calculator_pro/
-│
-├── calculator.py       # Main Dash application file
-├── Dockerfile          # Dockerfile for building the app container
-├── docker-compose.yml  # Docker Compose configuration
-├── requirements.txt    # Python dependencies (e.g., Dash)
-└── README.md           # Project documentation (this file)
 
 ### Key Sections in the README:
 1. **Project Overview**: Describes what the app does and provides an introduction.
