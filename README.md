@@ -71,7 +71,7 @@ This file lists the dependencies required for the project (e.g., Dash). When Doc
 This is a simple calculator app built using Dash, a Python framework for building analytical web applications. The app provides basic arithmetic operations and is designed to run inside a Docker container.
 ## Screenshots
 [Include some screenshots of your app's UI and functionality]
-![image]()
+![App Screenshot](vrenv/assets/Calculator.jpg)
 ## Features
 - Basic arithmetic operations: addition, subtraction, multiplication, and division.
 - A clean, simple UI built with Dash and HTML components.
