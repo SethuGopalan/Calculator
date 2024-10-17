@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+
 
 # Dash Calculator App
 
