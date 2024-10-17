@@ -107,9 +107,6 @@ This file lists the dependencies required for the project (e.g., Dash). When Doc
 6. **File Descriptions**: Describes the purpose of key files such as `calculator.py`, `Dockerfile`, `docker-compose.yml`, and `requirements.txt`.
 7. **Acknowledgments**: Mentions Dash, which is the framework used to build the app.
 
-### Steps:
-- Replace `https://github.com/yourusername/calculator_pro.git` with the actual link to your repository.
-- Customize the "Acknowledgments" and any other sections as per your project needs.
 
-Let me know if you need any further details or adjustments!
+
 >>>>>>> e193b77731d622ebcabef78947055081e7b60c46
