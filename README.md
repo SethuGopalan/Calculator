@@ -84,6 +84,19 @@ This is the main application file. It defines the layout of the calculator, incl
 
 ### `Dockerfile`
 The `Dockerfile` contains instructions for building the Docker image. It installs the necessary dependencies, copies the app into the Docker container, and runs the app using Python.
+```bash
+   FROM python:3.9-slim
+   
+   WORKDIR /app
+   
+   COPY . /app
+   
+   RUN pip install dash
+   
+   EXPOSE  8050
+   
+   CMD ["python", "vrenv/Calculator.py"]
+   ```
 
 ### `docker-compose.yml`
 The `docker-compose.yml` file defines the services required to run the app, builds the Docker container, and maps the container's port `8050` to the host machine.
