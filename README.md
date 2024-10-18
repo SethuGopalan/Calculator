@@ -100,7 +100,13 @@ The `Dockerfile` contains instructions for building the Docker image. It install
 
 ### `docker-compose.yml`
 The `docker-compose.yml` file defines the services required to run the app, builds the Docker container, and maps the container's port `8050` to the host machine.
-
+```bash
+services:
+  calculator-app:
+    build: .
+    ports:
+      - "8050:8050"
+```
 ### `requirements.txt`
 This file lists the dependencies required for the project (e.g., Dash). When Docker builds the image, it installs the dependencies listed here.
 
