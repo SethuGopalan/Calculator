@@ -1,3 +1,5 @@
+*.tfstste filter=lfs diff=lfs merge=lfs -text
+*.terraform filter=lfs diff=lfs merge=lfs -text
 terraform filter=lfs diff=lfs merge=lfs -text
 .terraform filter=lfs diff=lfs merge=lfs -text
 .exe filter=lfs diff=lfs merge=lfs -text
