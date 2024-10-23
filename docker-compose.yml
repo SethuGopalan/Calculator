@@ -1,5 +1,0 @@
-services:
-  calculator-app:
-    build: .
-    ports:
-      - "8050:8050"

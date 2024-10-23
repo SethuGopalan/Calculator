@@ -77,22 +77,23 @@ data "aws_ami" "aws_linux" {
     values = ["hvm"]
   }
 }
+# Generate SSH Key Pair
+resource "tls_private_key" "my_key" {
+  algorithm = "RSA"
+  rsa_bits  = 4096
+}
+
+# Create the AWS Key Pair using the generated public key
+resource "aws_key_pair" "my_key" {
+  key_name   = "my_key_pair" # Replace with your desired key name
+  public_key = tls_private_key.my_key.public_key_openssh
+}
 
 
-# Find the latest Amazon Linux 2 AMI
-# data "aws_ami" "aws_linux" {
-#   most_recent = true
-#   owners      = ["amazon"]
-
-#   filter {
-#     name   = "name"
-#     values = ["amzn2-ami-hvm-*-x86_64-gp2"]
-#   }
-# }
-resource "aws_instance" "EC2_Docker_SG" {
+resource "aws_instance" "EC2_Docker_Sys" {
   # ami                    = "ami-03a6eaae9938c858c"
   ami                    = data.aws_ami.aws_linux.id
-  key_name               = "default-ec2"
+  key_name               = aws_key_pair.my_key.key_name
   instance_type          = "t2.micro"
   vpc_security_group_ids = [aws_security_group.EC2_Docker_SG.id]
   subnet_id              = tolist(data.aws_subnet_ids.default_subnets.ids)[0]
@@ -102,7 +103,7 @@ resource "aws_instance" "EC2_Docker_SG" {
       type        = "ssh"
       host        = self.public_ip
       user        = "ec2-user"
-      private_key = file(var.aws_key_pair)
+      private_key = tls_private_key.my_key.private_key_pem
     }
 
     inline = [
@@ -117,4 +118,13 @@ resource "aws_instance" "EC2_Docker_SG" {
   tags = {
     Name = "EC2 Docker Instance"
   }
+}
+output "private_key" {
+  value     = tls_private_key.my_key.private_key_pem
+  sensitive = true # Hide the private key from the output by default
+}
+
+# Output the public IP address of the EC2 instance
+output "instance_public_ip" {
+  value = aws_instance.EC2_Docker_Sys.public_ip
 }
