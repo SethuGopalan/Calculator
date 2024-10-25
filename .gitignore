@@ -1,8 +1,8 @@
 *.tfstate
 *.tfstate.backup
 <<<<<<< HEAD
-*.terraform/
+*.terraform
 *.tfstate.backup.backup
 =======
-.terraform/
+.terraform
 >>>>>>> 22b7f7efacef0db4578f510b0e5f8598eb6ba97b
