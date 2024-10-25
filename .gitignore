@@ -6,3 +6,5 @@
 =======
 .terraform
 >>>>>>> 22b7f7efacef0db4578f510b0e5f8598eb6ba97b
+
+.terraform/providers/registry.terraform.io/hashicorp/aws/3.76.1/windows_amd64/terraform-provider-aws_v3.76.1_x5.exe
