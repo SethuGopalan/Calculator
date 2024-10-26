@@ -24,7 +24,7 @@ stages:
               provider: 'aws'
               command: 'init'
               backendServiceAWS: 'aws_connect_calculator'
-              backendAWSBucketName: ''
+              
               commandOptions: '-auto-approve'
           - task: TerraformCLI@2
             inputs:
