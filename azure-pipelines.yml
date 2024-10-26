@@ -16,7 +16,7 @@ stages:
       - job: Terraform
         displayName: Provision EC2 using Terraform
         pool:
-         vmImage: ubundu-latest
+         vmImage: ubuntu-latest
         steps:
           - checkout: self
           - task: TerraformTaskV4@4
