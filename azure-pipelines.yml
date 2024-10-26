@@ -1,0 +1,44 @@
+# Starter pipeline
+# Start with a minimal pipeline that you can customize to build and deploy your code.
+# Add steps that build, run tests, deploy, and more:
+# https://aka.ms/yaml
+
+trigger:
+- master
+
+pool:
+  vmImage: ubuntu-latest
+
+stages:
+  - stage: Provision
+    displayName: Provision EC2
+    jobs:
+      - job: Terraform
+        displayName: Provision EC2 using Terraform
+        pool:
+         vmImage: ubundu-latest
+        steps:
+          - checkout: self
+          - task: 
+        
+          
+
+- task: TerraformTaskV4@4
+  inputs:
+    provider: 'aws'
+    command: 'init'
+    backendServiceAWS: 'aws_connect_calculator'
+    backendAWSBucketName: ''
+    commandOptions: '-auto-approve'
+    - task: TerraformCLI@2
+      inputs:
+        command: 'plan'
+        allowTelemetryCollection: true
+    - task: TerraformCLI@2
+      inputs:
+        command: 'plan'
+        allowTelemetryCollection: true
+    - task: TerraformCLI@2
+      inputs:
+        command: 'apply'
+        allowTelemetryCollection: true
