@@ -19,26 +19,22 @@ stages:
          vmImage: ubundu-latest
         steps:
           - checkout: self
-          - task: 
-        
-          
-
-- task: TerraformTaskV4@4
-  inputs:
-    provider: 'aws'
-    command: 'init'
-    backendServiceAWS: 'aws_connect_calculator'
-    backendAWSBucketName: ''
-    commandOptions: '-auto-approve'
-    - task: TerraformCLI@2
-      inputs:
-        command: 'plan'
-        allowTelemetryCollection: true
-    - task: TerraformCLI@2
-      inputs:
-        command: 'plan'
-        allowTelemetryCollection: true
-    - task: TerraformCLI@2
-      inputs:
-        command: 'apply'
-        allowTelemetryCollection: true
+          - task: TerraformTaskV4@4
+            inputs:
+              provider: 'aws'
+              command: 'init'
+              backendServiceAWS: 'aws_connect_calculator'
+              backendAWSBucketName: ''
+              commandOptions: '-auto-approve'
+          - task: TerraformCLI@2
+            inputs:
+                  command: 'plan'
+                  allowTelemetryCollection: true
+          - task: TerraformCLI@2
+            inputs:
+                  command: 'plan'
+                  allowTelemetryCollection: true
+          - task: TerraformCLI@2
+            inputs:
+                  command: 'apply'
+                  allowTelemetryCollection: true
