@@ -19,20 +19,7 @@ stages:
          vmImage: ubuntu-latest
         steps:
           - checkout: self
-          - task: TerraformTaskV4@4
-            inputs:
-              provider: 'aws'
-              command: 'custom'
-              
-              outputTo: 'console'
-              customCommand: 'validate'
-              environmentServiceNameAWS: 'aws_connect_calculator'
-          - task: TerraformCLI@2
-            inputs:
-              command: 'init'
-
-              backendType: 'aws'
-              allowTelemetryCollection: true
+          
         
           - task: TerraformTaskV4@4
             inputs:
