@@ -25,7 +25,7 @@ stages:
             inputs:
               provider: 'aws'
               command: 'init'
-              commandOptions: '-auto-approve'
+              
               backendServiceAWS: 'aws_connect_calculator'
               backendAWSBucketName: 'calculater-app'
               backendAWSKey: 'cal-app'
