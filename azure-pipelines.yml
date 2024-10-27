@@ -23,7 +23,7 @@ stages:
             inputs:
               provider: 'aws'
               command: 'custom'
-              commandOptions: '-auto-approve'
+              
               outputTo: 'console'
               customCommand: 'validate'
               environmentServiceNameAWS: 'aws_connect_calculator'
