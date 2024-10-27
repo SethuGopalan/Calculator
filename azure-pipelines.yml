@@ -22,10 +22,15 @@ stages:
           - task: TerraformTaskV4@4
             inputs:
               provider: 'aws'
-              command: 'init'
+              
               backendServiceAWS: 'aws_connect_calculator'
               
               commandOptions: '-auto-approve'
+          - task: TerraformCLI@2
+            inputs:
+              command: 'init'
+              backendType: 'aws'
+              allowTelemetryCollection: true
           - task: TerraformCLI@2
             inputs:
                   command: 'plan'
