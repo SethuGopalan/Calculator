@@ -31,13 +31,29 @@ stages:
               backendAWSKey: 'cal-app'
           - task: TerraformCLI@2
             inputs:
+             command: 'validate'
+             additionalArguments: '-var "aws_access_key=$(AWS_ACCESS_KEY_ID)" -var "aws_secret_key=$(AWS_SECRET_ACCESS_KEY)"'
+             allowTelemetryCollection: true
+            env:
+             AWS_ACCESS_KEY_ID: $(AWS_ACCESS_KEY_ID)
+             AWS_SECRET_ACCESS_KEY: $(AWS_SECRET_ACCESS_KEY)
+
+          - task: TerraformCLI@2
+            inputs:
               command: 'plan'
+              additionalArguments: '-var "aws_access_key=$(AWS_ACCESS_KEY_ID)" -var "aws_secret_key=$(AWS_SECRET_ACCESS_KEY)"'
               allowTelemetryCollection: true
+            env:
+              AWS_ACCESS_KEY_ID: $(AWS_ACCESS_KEY_ID)
+              AWS_SECRET_ACCESS_KEY: $(AWS_SECRET_ACCESS_KEY)
+                  
+          
           - task: TerraformCLI@2
             inputs:
-                  command: 'plan'
-                  allowTelemetryCollection: true
-          - task: TerraformCLI@2
-            inputs:
-                  command: 'apply'
-                  allowTelemetryCollection: true
+              command: 'apply'
+              additionalArguments: '-var "aws_access_key=$(AWS_ACCESS_KEY_ID)" -var "aws_secret_key=$(AWS_SECRET_ACCESS_KEY)"'
+              allowTelemetryCollection: true
+            env:
+              AWS_ACCESS_KEY_ID: $(AWS_ACCESS_KEY_ID)
+              AWS_SECRET_ACCESS_KEY: $(AWS_SECRET_ACCESS_KEY)
+                  
