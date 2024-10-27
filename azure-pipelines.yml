@@ -22,13 +22,15 @@ stages:
           - task: TerraformTaskV4@4
             inputs:
               provider: 'aws'
-              
-              backendServiceAWS: 'aws_connect_calculator'
-              
+              command: 'custom'
               commandOptions: '-auto-approve'
+              outputTo: 'console'
+              customCommand: 'validate'
+              environmentServiceNameAWS: 'aws_connect_calculator'
           - task: TerraformCLI@2
             inputs:
               command: 'init'
+
               backendType: 'aws'
               allowTelemetryCollection: true
           - task: TerraformCLI@2
